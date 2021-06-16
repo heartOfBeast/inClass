@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="@{layout/default}">
+<th:block layout:fragment="customTitle">
+	<title th:text="${title}">thymeleaf layout</title>
+</th:block>
+
+<th:block layout:fragment="customjs">
+<!-- 	<script>
+		$(function(){
+			
+			$('#addmemberbtn').click(function(){
+				var regexpw = /^.*(?=^.{2,8}$)(?=.*\d)(?=.*[a-za-z])(?=.*[!@#$%^&+=]).*$/;
+				var regexemail = /^[0-9a-za-z]([-_\.]?[0-9a-za-z])*@[0-9a-za-z]([-_\.]?[0-9a-za-z])*\.[a-za-z]{2,3}$/i;
+				var submitflag = true;
+				var memberform = $('#addmemberform');
+				var inputobj = memberform.find('input');
+				
+				$.each(inputobj, function(e){
+					var inputname = $(this).attr('name');
+					var inputvalue = $(this).val();
+					var inputlabel = $(this).parent().parent().children().eq(0).text();
+					if(inputname == 'memberpw'){
+						if(!regexpw.test(inputvalue)){
+							alert(inputlabel + '을 다시 입력해주세요');
+							$(this).focus();
+							submitflag=false;
+							return submitflag;
+							
+						}
+					}else if(inputname == 'memberemail'){
+						if(!regexemail.test(inputvalue)){
+							alert(inputlabel + '을 다시 입력해주세요');
+							$(this).focus();
+							submitflag=false;
+							return submitflag;
+						}
+					}else{
+						if(inputvalue == ''||inputvalue==undefined||inputvalue==null){
+							alert(inputlabel + '을 다시 입력해주세요');
+							$(this).focus();
+							submitflag=false;
+							return submitflag;
+						}
+					}
+				});
+				if(submitflag) memberform.submit();
+			});
+			
+		});
+	</script> -->
+</th:block>
+
+<th:block layout:fragment="customContents">
+	<form id="addGoodsForm" th:action="@{/addGoods}" method="post">
+		<table border="1">
+			<tr>
+				<td>상품명</td>
+				<td>
+					<input type="text" name="goodsName" placeholder="상품명을 입력해주세요."/>
+					<button id="idCheckBtn" type="button">중복체크</button>
+				</td>
+			</tr>
+			<tr>
+				<td>상품가격</td>
+				<td>
+					<input type="text" name="goodsPrice" placeholder="상품가격을 입력해주세요." />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<button type="submit" id="addGoodsBtn" >상품등록</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</th:block>
+</html>
