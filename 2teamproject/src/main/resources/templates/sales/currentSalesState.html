@@ -1,0 +1,391 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+	
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">매출관리</li>
+		<li class="breadcrumb-item active">매출현황</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+	<!-- Main container start -->
+				<div class="main-container">
+				
+					<!-- Row start -->
+					<!-- 매출현황 그래프 시작-->
+					<div class="row gutters">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">#월간 매출 현황</div>
+								</div>
+								<div class="card-body">
+									<div id="monthly-sales-graph" class="primary-graph"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 매출현황 그래프 끝 -->
+					<!-- Row end -->
+					
+					<!-- 매출현황 리스트 시작 -->
+							<div class="table-container">
+								<div class="t-header">매출 현황 리스트</div>
+								<div class="table-responsive">
+									<table id="copy-print-csv" class="table custom-table">
+										<thead>
+											<tr>
+											  <th>계약코드</th>
+											  <th>쇼핑몰사업자</th>
+											  <th>계약단가</th>
+											  <th>계약 시작일</th>
+											  <th>계약종료일</th>
+											  <th>계약금액</th>
+											  <th>납부여부</th>
+											  <th>내용 수정</th>
+											  <th>내용 삭제</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											  <td>contract_final_code001</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											  
+											</tr>
+											<tr>
+											  <td>contract_final_code002</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code003</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code004</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code005</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code006</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code007</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code008</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>303456120</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code009</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30323100</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code010</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>302342300</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code011</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>312312</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code012</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code013</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code014</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>1</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code015</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30002220</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code016</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code017</td>
+											  <td>삼성전자</td>
+											  <th>contract_code01</th>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code018</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code019</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code020</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code021</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code022</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code023</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code024</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code025</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code026</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code027</td>
+											  <td>삼성전자</td>
+											  <td>contract_code01</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>30000</td>
+											  <td>납부 완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+											<tr>
+											  <td>contract_final_code028</td>
+											  <td>LG화학</td>
+											  <td>contract_code02</td>
+											  <td>2021-05-18</td>
+											  <td>2021-06-18</td>
+											  <td>300000</td>
+											  <td>납부완료</td>
+											  <td><a th:href="@{modifySales}">내용 수정</a></td>
+											  <td>내용 삭제</td>
+											</tr>
+
+										</tbody>
+						    	</table>
+								</div>
+							</div>
+							<!-- 매출현황 리스트 끝 -->
+
+				</div>
+	<!-- Main container end -->
+
+</th:block>
+		
+</html>

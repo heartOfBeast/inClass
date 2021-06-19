@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="fragments/head :: headFragment"></head>
+
+<style>
+html,body {
+  height: 100%;
+}
+</style>
+
+<body>
+<th:block layout:fragment="container">
+<form th:action="@{/signup}" method="post">
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-70">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="jumbotron">
+					<h1 class="display-4 text-primary">2TEAM 풀필먼트 물류 웹서비스</h1>
+					<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to<br />featured content or information.</p>
+					<p>It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for<br/>typography and spacing to space content out within the largercontainer. Typography and spacing to space content out <br />within the larger container.</p>
+					<div class="mb-3"></div>
+                      <a th:href="@{/main}" type="submit" style="margin:8px" class="btn btn-outline-info">페이지이동</a>
+				</div>
+			</div>
+       <div class="col-2"></div>
+          
+        <div class="col-5 text-center">
+                  <div class="card" style="padding:8px">
+                    <h4>거래처 회원 가입</h4>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">아이디</span>
+                            </div>
+                            <input type="text" name="user_name"id="user_name" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">비밀번호</span>
+                            </div>
+                            <input type="password" name="user_Pw" id="user_Pw" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">비밀번호 확인</span>
+                            </div>
+                            <input type="password" name="user_PwCheck" id="user_PwCheck" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">쇼핑몰사업자명</span>
+                            </div>
+                            <input type="text" name="user_ShopName" id="user_ShopName" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">쇼핑몰 사업장 번호</span>
+                            </div>
+                            <input type="text" name="user_ShopTel" id="user_ShopTel" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping" style="width: 130px;">쇼핑몰 사업장 주소</span>
+                            </div>
+                            <input type="text" name="user_ShopAdrr" id="user_ShopAdrr" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping"  style="width: 130px;">사업자 번호</span>
+                            </div>
+                            <input type="text" name="user_BN" id="user_BN" class="form-control">
+                        </div>
+                        <div class="input-group flex-nowrap" style="padding:8px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping"  style="width: 130px;">주거래 상품</span>
+                            </div>
+                            <input type="text" name="user_BN" id="user_BN" class="form-control">
+                        </div>
+                        <button type="submit" style="margin:8px" class="btn btn-outline-info" name="button">회원가입 완료</button>
+                  </div>
+          </div>
+
+        <div class="col-2"></div>
+    </div> <!-- END OF ROW -->
+</div>
+</form>
+</th:block>
+</body>
+</html>

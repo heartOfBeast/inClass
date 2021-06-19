@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+
+<nav th:fragment="left" id="sidebar" class="sidebar-wrapper">			
+<!-- Sidebar brand start  -->
+<div class="sidebar-brand">
+	<a th:href="@{/}" class="logo">
+		<img src="img/logo.png" alt="Skyline Admin Dashboard" />
+	</a>
+</div>
+<!-- Sidebar brand end  -->
+
+<!-- Sidebar content start -->
+<div class="sidebar-content">
+
+	<!-- sidebar menu start -->
+	<div class="sidebar-menu">
+		<ul>
+			<li class="header-menu">MENU</li>
+			
+			<!-- 창고메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">창고</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 회원관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">회원관리</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 매출관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">#매출관리(상범)</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a th:href="@{currentSalesState}" class="current-page">#매출현황(상범)</a>
+						</li>
+						<li>
+							<a th:href="@{addSales}">#매출등록(상범)</a>
+						</li>
+						<li>
+							<a th:href="@{salesList}">#매출내역 조회(상범)</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 재고관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">재고</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 거래처관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">거래처</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 입고관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">입고</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 출고관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">출고</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+			<!-- 안전점검관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">안전점검</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+			<!-- 차량관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">차량</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+			<!-- 배차관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">배차</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<!-- 견적관리메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">견적</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a href="index.html" class="current-page">Admin Dashboard</a>
+						</li>
+						<li>
+							<a href="sales-dashboard.html">Sales Dashboard</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+			<!--고객센터메뉴 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">고객센터</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a th:href="@{inquiryList}">#문의게시판</a>
+						</li>
+						<li>
+							<a th:href="@{sendOneByOne}">#1:1문의</a>
+						</li>
+						<li>
+							<a href="crm-dashboard.html">CRM Dashboard</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+		</ul>
+	</div>
+	<!-- sidebar menu end -->
+
+</div>
+<!-- Sidebar content end -->
+	
+</nav>

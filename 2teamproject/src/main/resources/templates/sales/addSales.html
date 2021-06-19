@@ -1,0 +1,90 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+	
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">매출관리</li>
+		<li class="breadcrumb-item active">매출등록</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+	<!-- Main container start -->
+	<!-- 매출등록(계약등록) 시작 -->
+		<div class="row justify-content-center gutters">
+			<div class="col-xl-7 col-lg-7 col-md-9 col-sm-10">
+				<form id="addSales" th:action="@{/addSales}" method="post">
+					<div class="card m-0">
+						<div class="card-header">
+							<div class="card-title">매출등록</div>
+							<div class="card-sub-title">계약 완료 및 계약금 납부된 것만 기입해주세요</div>
+						</div>
+						<div class="card-body">
+							
+							<div class="form-group row gutters">
+								<label for="inputName" class="col-sm-3 col-form-label text-right">쇼핑몰 사업자</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="inputName" placeholder="쇼핑몰 사업자명">
+								</div>
+							</div>
+							
+							<div class="form-group row gutters">
+								<label for="inputEmail" class="col-sm-3 col-form-label text-right">계약 유형</label>
+								<div class="col-sm-6">
+									<input type="email" class="form-control" id="inputEmail" placeholder="계약 유형">
+								</div>
+							</div>
+							
+							<div class="form-group row gutters">
+								<label for="inputMobNumber" class="col-sm-3 col-form-label text-right">계약시작일</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="inputMobNumber" placeholder="계약시작일">
+								</div>
+							</div>
+							
+							<div class="form-group row gutters">
+								<label for="inputSubject" class="col-sm-3 col-form-label text-right">계약기간</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="inputSubject" placeholder="계약기간">
+								</div>
+							</div>
+							
+							<div class="form-group row gutters">
+								<label for="inputSubject" class="col-sm-3 col-form-label text-right">계약금액</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="inputSubject" placeholder="계약금액">
+								</div>
+							</div>
+							
+							<button type="button" id="submit" name="submit" class="btn btn-primary float-right">매출등록</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- 매출등록(계약등록) 끝 -->
+	<!-- Main container end -->
+
+</th:block>
+		
+</html>
