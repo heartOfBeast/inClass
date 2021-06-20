@@ -1,0 +1,101 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+<title th:text="${title}"></title>
+
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">입고</li>
+		<li class="breadcrumb-item active">입고지시서</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+	<!-- Main container start -->
+		<div class="main-container">
+
+		<!-- Row start -->
+		<div class="row gutters justify-content-center">
+			<div class="col-xl-10 col-lg-7 col-md-8 col-sm-8 col-12">
+				<form>
+					<div class="card m-0">
+						<div class="card-header">
+							<button type="button" id="submit" name="submit" class="btn btn-primary float-right" style="margin: 5px;">삭제</button>
+							<button type="button" id="submit" name="submit" class="btn btn-primary float-right" style="margin: 5px;">수정</button>
+							<div class="card-sub-title">입고지시서</div>
+							
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="입고코드">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="입고지시서코드">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="상품명">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="입고창고">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="보관위치">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="실제입고수량">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="쇼핑몰사업자아이디">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="쇼핑몰사업자 담당자명">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="창고관리자 연락처">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="입고일">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="등록일">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="등록 담당자">
+							</div>
+													
+						</div>
+					</div>
+				</form>
+
+
+				
+
+	
+			</div>
+		</div>
+			<!-- Row end -->
+
+		</div>
+	<!-- Main container end -->
+
+</th:block>
+		
+</html>

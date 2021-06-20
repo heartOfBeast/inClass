@@ -1,0 +1,80 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+<title th:text="${title}"></title>
+
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">6/20 수정/상품관리</li>
+		<li class="breadcrumb-item active">상품목록</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+	<!-- Main container start -->
+<div class="main-container">
+			<div class="row gutters">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="">
+					<div class="table-container">
+						<div class="t-header">상품목록</div>
+						<div class="table-responsive">
+							<table id="copy-print-csv" class="table custom-table">
+								<thead>
+									<tr>
+									  <th>입고지시서코드</th>
+									  <th>lot 번호</th>
+									  <th>상품코드</th>
+									  <th>보관위치</th>
+									  <th>입고예정수량</th>
+									  <th>입고예정일</th>
+									  <th>등록자</th>
+									  <th>등록일</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									  <td><a th:href="@{readWarehousingDirection}">incoming_direction_001</a></td>
+									  <td>lot_001_789458</td>
+									  <td>product_001</td>
+									  <td>w001-s001-001-001</td>
+									  <td>300</td>
+									  <td>2021년 5월 20일</td>
+									  <td>김관리</td>
+									  <td>2021.05.19</td>
+									  
+	
+									</tr>
+								</tbody>
+				    	</table>
+								<button type="button" id="bundleModifyBtn">일괄수정</button>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+	<!-- Main container end -->
+
+</th:block>
+		
+</html>

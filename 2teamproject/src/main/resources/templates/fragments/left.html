@@ -142,18 +142,18 @@
 			<li class="sidebar-dropdown">
 				<a href="#">
 					<i class="icon-devices_other"></i>
-					<span class="menu-text">입고</span>
+					<span class="menu-text">#입고</span>
 				</a>
 				<div class="sidebar-submenu">
 					<ul>
 						<li>
-							<a href="index.html" class="current-page">Admin Dashboard</a>
+							<a th:href="@{warehousingRequest}" class="current-page">입고요청</a>
 						</li>
 						<li>
-							<a href="sales-dashboard.html">Sales Dashboard</a>
+							<a th:href="@{warehousingDirectionList}">입고지시서 목록</a>
 						</li>
 						<li>
-							<a href="crm-dashboard.html">CRM Dashboard</a>
+							<a th:href="@{warehousingState}">입고현황</a>
 						</li>
 						<li>
 							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
@@ -301,7 +301,7 @@
 							<a th:href="@{sendOneByOne}">#1:1문의</a>
 						</li>
 						<li>
-							<a href="crm-dashboard.html">CRM Dashboard</a>
+							<a th:href="@{oftenFaq}">자주 묻는 질문</a>
 						</li>
 						<li>
 							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
@@ -310,6 +310,29 @@
 				</div>
 			</li>
 			
+			<!--상품관리 -->
+			<li class="sidebar-dropdown">
+				<a href="#">
+					<i class="icon-devices_other"></i>
+					<span class="menu-text">#상품관리(품목관리 포함 추가작업필요)</span>
+				</a>
+				<div class="sidebar-submenu">
+					<ul>
+						<li>
+							<a th:href="@{productList}">상품목록</a>
+						</li>
+						<li>
+							<a th:href="@{addProduct}">상품등록</a>
+						</li>
+						<li>
+							<a th:href="@{warehouseProduct}">창고별 목록</a>
+						</li>
+						<li>
+							<a href="ecommerce-dashboard.html">Ecommerce Dashboard</a>
+						</li>
+					</ul>
+				</div>
+			</li>
 			
 		</ul>
 	</div>

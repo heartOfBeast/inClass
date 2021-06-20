@@ -1,0 +1,127 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+<title th:text="${title}"></title>
+
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">상품관리</li>
+		<li class="breadcrumb-item active">상품등록</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+
+	<!-- Main container start -->
+				<div class="main-container">
+
+					<!-- Row start -->
+					<div class="row gutters justify-content-center">
+						<div class="col-xl-5 col-lg-5 col-md-6 col-sm-6 col-12">
+							<form>
+								<div class="card m-0">
+									<div class="card-header">
+										<div class="card-title">상품등록</div>
+									</div>
+									<div class="card-body">
+										<div class="form-group">
+											<select class="form-control" id="storageLocation">
+												<option name="storageLocation" value="">::보관유형::</option>
+												<option name="storageLocation" value="ordinaryTemperature">::상온::</option>
+												<option name="storageLocation" value="refrigerateTemperature">::냉장::</option>
+												<option name="storageLocation" value="freezeTemperature">::냉동::</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<select class="form-control">
+												<option name="bigCategory">::대분류::</option>
+												<option name="bigCategory">::큰거::</option>
+												<option name="bigCategory">::큰거::</option>
+												<option name="bigCategory">::큰거::</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<select class="form-control">
+												<option name="mediumCategory">::중분류::</option>
+												<option name="mediumCategory">::상온::</option>
+												<option name="mediumCategory">::냉장::</option>
+												<option name="mediumCategory">::냉동::</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<select class="form-control">
+												<option name="smallCategory">::소분류::</option>
+												<option name="smallCategory">::상온::</option>
+												<option name="smallCategory">::냉장::</option>
+												<option name="smallCategory">::냉동::</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<input type="addCategory" class="form-control" id="addCategory" name="addCategory" placeholder="추가카테고리" required="">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="productName" name="productName" placeholder="productName" required="">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="productWeight" name="productWeight" placeholder="productWeight" required="">
+										</div>
+										<div class="form-group">
+											<select class="form-control">
+												<option name="weightUnit">::무게단위::</option>
+												<option name="weightUnit">::kg::</option>
+												<option name="weightUnit">::g::</option>
+												<option name="weightUnit">::ton::</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<div class="custom-date-input">
+												<input type="text" name="" class="form-control datepicker-dropdowns" placeholder="produceDate" style="width: 100%;">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="custom-date-input">
+												<input type="text" name="" class="form-control datepicker-dropdowns" placeholder="expiryDate" style="width: 100%;">
+											</div>
+										</div>
+										<div class="form-group">
+											<textarea class="form-control" id="productDetail" placeholder="productDetail" maxlength="140" rows="4" style="resize: none;"></textarea>
+										</div>
+										
+										<button type="button" id="addProductBtn" name="submit" class="btn btn-primary float-right" style="margin: 3px;">상품추가</button>
+										<button type="button" id="bundleAddBtn" name="bundleAddBtn" class="btn btn-primary float-right" style="margin: 3px;">일괄추가</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+					
+
+					<!-- Row end -->
+
+				</div>
+	<!-- Main container end -->
+
+</th:block>
+		
+		
+		
+</html>

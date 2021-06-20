@@ -1,0 +1,91 @@
+<!doctype html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+ 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="@{layout/default}">
+<title th:text="${title}"></title>
+
+<th:block layout:fragment="pageTitle">
+<div class="page-header">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">6/20 수정/상품관리</li>
+		<li class="breadcrumb-item active">상품목록</li>
+	</ol>
+
+	<ul class="app-actions">
+		<li>
+			<a href="#" id="reportrange">
+				<span class="range-text"></span>
+				<i class="icon-chevron-down"></i>	
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<i class="icon-export"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+</th:block>
+
+<th:block layout:fragment="container">
+	<!-- Main container start -->
+<div class="main-container">
+			<div class="row gutters">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="table-container">
+						<div class="t-header">상품목록</div>
+						<div class="table-responsive">
+							<table id="copy-print-csv" class="table custom-table">
+								<thead>
+									<tr>
+									  <th>상품코드</th>
+									  <th>상품명</th>
+									  <th>보관유형</th>
+									  <th>대분류</th>
+									  <th>중분류</th>
+									  <th>소분류</th>
+									  <th>추가분류</th>
+									  <th>상품무게</th>
+									  <th>제조일자</th>
+									  <th>유통기한</th>
+									  <th>등록자</th>
+									  <th>수정</th>
+									  <th>삭제</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									  <td>id100_p_001</td>
+									  <td>사골곰탕</td>
+									  <td>냉장</td>
+									  <td>식음료</td>
+									  <td>음식</td>
+									  <td>스프/죽</td>
+									  <td>null</td>
+									  <td>500g</td>
+									  <td>2021.05.12</td>
+									  <td>2023.05.12</td>
+									  <td>id100</td>
+									  <td>
+									  	<a th:href="@{modifyProduct}">수정</a>
+								  	  </td>
+									  <td>
+									  	<a href="#">삭제</a>
+								  	  </td>
+									</tr>
+								</tbody>
+				    	</table>
+								<button type="button" id="bundleModifyBtn">일괄수정</button>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+	<!-- Main container end -->
+
+</th:block>
+		
+</html>

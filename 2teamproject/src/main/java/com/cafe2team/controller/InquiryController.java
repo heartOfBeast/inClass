@@ -6,14 +6,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class InquiryController {
-
-	@GetMapping("writeOneByOne")
-	public String writeOneByOne(Model model) {
-		model.addAttribute("title", "1:1 문의 작성");
+ 
+	
+	
+	//문의게시판 댓글
+	@GetMapping("inquiryReply")
+	public String inquiryReply(Model model) {
+		model.addAttribute("title", "댓글");
 		
-		return "inquiry/writeOneByOne";
+		return "redirect:/inquiry/readInquiry";
 	}
 	
+	
+	//자주묻는 질문
+	@GetMapping("oftenFaq")
+	public String oftenFaq(Model model) {
+		model.addAttribute("title", "자주 묻는 질문");
+		
+		return "inquiry/oftenFaq";
+	}
+	
+
+	//1:1문의
 	@GetMapping("sendOneByOne")
 	public String sendOneByOne(Model model) {
 		model.addAttribute("title", "1:1문의");
@@ -21,7 +35,7 @@ public class InquiryController {
 		return "inquiry/sendOneByOne";
 	}
 	
-	
+	//작성글 읽기
 	@GetMapping("readInquiry")
 	public String readInquire(Model model) {
 		model.addAttribute("title", "문의게시판");
@@ -29,7 +43,7 @@ public class InquiryController {
 		return "inquiry/readInquiry";
 	}
 	
-	
+	//문의게시판
 	@GetMapping("inquiryList")
 	public String inquiryList(Model model) {
 		model.addAttribute("title", "문의게시판");

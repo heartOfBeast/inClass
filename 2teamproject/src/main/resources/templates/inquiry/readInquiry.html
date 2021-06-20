@@ -3,7 +3,8 @@
 	xmlns:th="http://www.thymeleaf.org"
  	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="@{layout/default}">
-	
+<title th:text="${title}"></title>
+
 <th:block layout:fragment="pageTitle">
 <div class="page-header">
 	<ol class="breadcrumb">
@@ -31,41 +32,58 @@
 	<!-- Main container start -->
 		<div class="main-container">
 
-			<!-- Row start -->
-			<div class="row justify-content-center gutters">
-				<div class="col-xl-7 col-lg-7 col-md-9 col-sm-10">
-					<form>
-						<div class="card m-0">
-							<div class="card-header">
-								<div class="card-title">문의게시판</div>
-							</div>
-							<div class="card-body">
+		<!-- Row start -->
+		<div class="row gutters justify-content-center">
+			<div class="col-xl-10 col-lg-7 col-md-8 col-sm-8 col-12">
+				<form>
+					<div class="card m-0">
+						<div class="card-header">
+							<button type="button" id="submit" name="submit" class="btn btn-primary float-right" style="margin: 5px;">삭제</button>
+							<button type="button" id="submit" name="submit" class="btn btn-primary float-right" style="margin: 5px;">수정</button>
+							<div class="card-sub-title">문의게시판</div>
 							
-								<div class="form-group row gutters">
-									<label for="inputSubject" class="col-sm-3 col-form-label text-right">제목</label>
-									<div class="col-sm-6">
-										<input type="text" class="form-control" id="inputSubject" readonly="readonly" >
-									</div>
-								</div>
-								
-								<div class="form-group row gutters">
-									<label for="inquitySubject" class="col-sm-3 col-form-label text-right">내용</label>
-									<div class="col-sm-9">
-										<textarea class="form-control" id="inquiryText"  maxlength="500" rows="20" readonly="readonly"></textarea>
-									</div>
-								</div>
-								
-								<div>
-									<button type="button" id="modifyText" name="submit" class="btn btn-primary float-right" style="margin: 5px;">수정</button>
-								</div>
-								
-								<div>
-									<button type="button" id="deleteText" name="submit" class="btn btn-primary float-right" style="margin: 5px;">삭제</button>
-								</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" readonly="readonly" required="">
+							</div>
+							<div class="form-group">
+							 	<textarea class="form-control" id="message" placeholder="contents" maxlength="500" rows="20" readonly="readonly"></textarea>
 
 							</div>
+							
 						</div>
-					</form>
+					</div>
+				</form>
+
+
+					<div class="media comments">
+						
+						<div class="media-body">
+							<h5 class="mt-0 media-heading">Jake Barford <span class="date">3 months ago</span></h5>
+							<p>The grid right now is being handled by the Bootstrap grid system. You can get as many rows as you want, but as far as columns you are limited to what Bootstrap's framework can offer. 12 columns would make the images a bit too small I think, but you could easily do 6 columns by using col-md-2 instead of col-md-3!</p>
+
+							<div class="media mt-3">
+								
+								<div class="media-body">
+									<h5 class="mt-0 media-heading">Carlos Slim Helu <span class="date">2 months ago</span></h5>
+									<p>I completely forgot about that.. Noob question, thank you I appreciate the response, very neat.</p>
+
+									<div class="clearfix comments-form">
+										<div class="form-group">
+											<label class="control-label"><b>Write comment</b></label>
+											<textarea class="form-control textarea" rows="3" placeholder="Write A Comment"></textarea>
+										</div>
+										<div class="form-group clearfix">
+											<button class="btn btn-primary float-right">Post Comment</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+	
 				</div>
 			</div>
 			<!-- Row end -->
